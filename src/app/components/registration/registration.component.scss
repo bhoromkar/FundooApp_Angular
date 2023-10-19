@@ -1,48 +1,70 @@
+body{
+   font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+   display :flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   margin: 0;
+   padding: 0;
+   background-color: #f0f0f0;
+}
+
 .container{
-    display: flex;
+  
+ display: flex;
+ flex-direction: column;
  justify-content: center;
  align-items: center;
+ padding-top: 1%;
+ 
+ border-radius:2%;
+ //box-shadow:0 0 10px rgba(0,0,0,1);
+
+ padding: 20px;
+ max-width: 700px;
+ width:100%;
+
  
  
-    }
- //    border: 1px solid green;
+  
  .form
  {
- border: 5px solid rgb(78, 188, 231);
- width: 60vw;
+ //border: 1px solid lightslategrey ;
+ width: inherit;
+ //position: relative;
+ //width:auto;
  height: auto;
  display: flex;
+ background-color: #fff ;
  justify-content: center;
- border-radius: 5%;
- 
+ align-items: center;
+ align-content: center;
+ border-radius: 1%;
+padding-left: 3%;
+border: 1px solid black;
 
  }
+ 
+}
+.inner-container{
+//    border: 1px solid red;
 
-//  #container {
-//    width: 500px;
-//    border: solid 1px #000;
-//    display: -webkit-flex;
-//    display: -ms-flexbox;
-//    display: flex;
-//  }
-//  #a {
-//    width: 20%;
-//    border: solid 1px #000;
-//  }
-//  #b {
-//    width: 20%;
-//    border: solid 1px #000;
-//    height: 200px;
-//  }
+   margin: 2%;
+   width:90%
+ 
+}
+
+
  .left-container{
-   flex:1.5;
+   flex:1;
    // display: block;
    // justify-content:left;
    // border: 1px solid green;
 
  }
  right-container{
-   flex: .5;
+   flex: 1;
    // display: block;
    // justify-content:right;
 //border: 1px solid red;
@@ -51,28 +73,40 @@
  .image{
 display: flex;
 flex-direction: column;
-padding-top: 180px;
+//padding-top:30%;
+//align-items: left;
+justify-content: center;
+text-align: center;
+
+width:100%;
+//width:125%;
 
  }
 
  img{
-    height: 80%;
-    width: 80%;
+    height: 70%;
+    width: 70%;
  }
  
  .inner-container{
-     // border: 1px solid red;
+    //  border: 1px solid red;
      margin: 2%;
  }
  
  .text-area{
     //border: 1px solid yellow;
-    width :80%;
-    justify-content: center;
-    justify-content: space-between;
+    width :inherit;
+    justify-content: left;
+    justify-content: space-evenly;
+  
+ }
+ .text-area{
+   &:NOT(:last-child){
+      margin-right: 20PX;
+   }
  }
  .text-area2{
-    width :90%;
+    width :100%;
  }
  .form-body{
  //border: 1px solid black;
@@ -85,24 +119,39 @@ padding-top: 180px;
  .formfield-a{
     display: flex ;
     flex-direction: row;
-    justify-content: space-between;
-    width: auto;
-    width :fit-content;
+    justify-content: space-evenly;
+    width: 100%;
+
+ }
+    
+    
 
      // line-height: 10%;
- }
+
  .formfield-b{
     display: flex ;
     flex-direction: column;
     justify-content: center;
-    width :auto;
+    width :100%;
 
  }
+ .logo-container{
+   width: 70%;
+   height: 50%;
+   text-align: center;
+}
+.logo{
+   text-align: center;
+   width : 40%;
+   height: auto;
+}
  
  .example-button-row{
+  // border: 1px solid blueviolet;
      display: flex;
      flex-direction: row ;
-     justify-content:space-evenly ;
+     justify-content:space-between;
+     margin-top: 5%;
      
  }
      
@@ -112,12 +161,55 @@ padding-top: 180px;
      font-size: 20px;
      text-align: left;
      justify-content: left;
+     font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
    
 
  }
-     
+ p{
+   font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+   text-align: center;
+   padding-right: 20%;
+ }
+     .email-ref{
+      font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+      // padding-bottom: 10%;
+
+     }
  // h1{
  //     font-size:x-large;
  //     text-align: center;
      
- // }
+//  }
+ .pass-ref{
+   font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+   font-size: smaller;
+padding-bottom: 20%;
+justify-content: left;
+
+ }
+ signin-ref{
+   font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+  // padding-bottom: 500%;
+ }
+ @media screen and (max-width: 1000px) {
+   .right-container,image {
+    display: none;
+   }
+ }
+//  @media screen and (max-width: 340px) {
+//    .form-body {
+//    width:50%;
+//    }
+//  }
+//  @media screen and (max-width: 340px) {
+//    .formfield-a,.formfield-b{
+//    width:80%;
+//    }
+//  }
+//  @media screen and (min-width: 801px) {
+//    .formfield-a,.formfield-b,.container,.inner-container{
+//    width:80%;
+//    padding: 0px 0px 0px 0px;
+//    margin :0px 0px 0px 0px;
+//    }
+//  }
