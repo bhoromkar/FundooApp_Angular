@@ -11,6 +11,9 @@ import {MatSnackBarModule,MatSnackBar} from '@angular/material/snack-bar';
 export class ResetPasswordComponent {
   Resetform!: FormGroup;
   submitted=true;
+  password: string = '';
+  showPassword : boolean = false;
+  
 constructor(private FormBuilder:FormBuilder, private _snackbar:MatSnackBar){}
 
 ngOnInit(){
@@ -19,6 +22,9 @@ ngOnInit(){
     password: ['', [Validators.required, Validators.minLength(8)]],
     confirmpassword: ['',[Validators.required,Validators.minLength(8)]],
 });
+}
+showHidePassword() {
+  this.showPassword = !this.showPassword;
 }
 submit(){
   if(this.Resetform.valid){

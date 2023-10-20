@@ -12,62 +12,69 @@
     </div>
     <form [formGroup]="registerForm" >
     <div class="formfield-a">
-    
+    <div class="textfield-a">
         <mat-form-field class="text-area"  appearance="outline">
           <mat-label>First Name</mat-label>
           <input matInput placeholder="Placeholder" formControlName="firstname">
           <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-          <mat-error>Enter Correct LastName!</mat-error>
+          <mat-error>Enter Correct FirstName!</mat-error>
         </mat-form-field>
-      
-      
+      </div>
+
+      <div class="textfield-b">
         <mat-form-field class="text-area" appearance="outline">
           <mat-label>Last Name</mat-label>
           <input matInput placeholder="Placeholder" formControlName="lastname">
           <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
           <mat-error>Enter Correct LastName!</mat-error>
         </mat-form-field>
-      
+      </div>
     </div>
     <div class="formfield-b">
-     
+    <div class="formfield-c">
             <mat-form-field class="text-area2" appearance="outline">
               <mat-label>Email</mat-label>
               <input matInput placeholder="Placeholder" formControlName="email">
               <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
               <mat-error>Enter correct Details!</mat-error>
-              <mat-hint class="email-ref"><a href="#">use your current email instead </a></mat-hint>
+              <!-- <mat-hint class="email-ref"><a href="#">use your current email instead </a></mat-hint> -->
             </mat-form-field>
-         
-          
         </div>
+        <mat-hint class="email-ref"><a href="#">use your current email instead </a></mat-hint>
+      </div>
         <div class="formfield-a">
-       
+          <div class="textfield-p">
+
             <mat-form-field class="text-area" appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Placeholder" formControlName="password">
+              <input matInput placeholder="Placeholder" formControlName="password" [type]=" showPassword ? 'text' : 'password' " >
               <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
               <mat-hint  class="pass-ref">Password should 8 character. </mat-hint>
               <mat-error>Enter correct Password!</mat-error>
 
             </mat-form-field>
-          
+          </div>
+          <div class="textfield-s">
+
             <mat-form-field class="text-area" appearance="outline">
               <mat-label>Confirm</mat-label>
-              <input matInput placeholder="Placeholder" formControlName="confirmpassword">
+              <input matInput placeholder="Placeholder" formControlName="confirmpassword" [type]=" showPassword ? 'text' : 'password' " >
               <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
              <mat-hint  class="pass-ref">Password must be Same</mat-hint>
              <mat-error>Enter correct Password!</mat-error>
             </mat-form-field>
+          </div>
         </div>
-        <mat-checkbox class="example-margin">Show Password</mat-checkbox>
+        <div class="showpass">
+          <mat-checkbox class="example-margin"  (click)='showHidePassword()'> {{ showPassword ? 'Hide' : 'Show' }} Password </mat-checkbox>
+        </div>
       </form>
       </div>
   
         
       <div class="example-button-row">
         <button mat-button color="primary" routerLink="/login">Sign in Instead</button>
-        <button mat-flat-button color="primary" type="submit" (click)="signup()" >Next</button>
+        <button mat-flat-button color="primary" type="submit" (click)="signup()">Next</button>
     </div>
    
     </div>

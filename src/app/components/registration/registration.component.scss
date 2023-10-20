@@ -1,40 +1,39 @@
 body{
-   font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
-   display :flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   margin: 0;
-   padding: 0;
-   background-color: #f0f0f0;
+//    display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  align-items: center;
+
+   background-color: #fff ;
+ //  border: 1px solid rgb(28, 126, 224) ;
+ //padding-top: 20%;
+
 }
 
 .container{
-  
+  //border: 1px solid lightslategrey ;
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
- padding-top: 1%;
- 
+ //padding-top: 30%;
  border-radius:2%;
  //box-shadow:0 0 10px rgba(0,0,0,1);
 
- padding: 20px;
+ //padding: 20px;
  max-width: 700px;
- width:100%;
+ width:98%;
 
  
  
   
  .form
  {
- //border: 1px solid lightslategrey ;
+ border: 1px solid lightslategrey ;
  width: inherit;
  //position: relative;
  //width:auto;
- height: auto;
+ height: inherit;
  display: flex;
  background-color: #fff ;
  justify-content: center;
@@ -42,11 +41,18 @@ body{
  align-content: center;
  border-radius: 1%;
 padding-left: 3%;
-border: 1px solid black;
+border: 1px solid #DBDDE0;
 
  }
  
 }
+.form-body{
+  // border: 1px solid black;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+   }
 .inner-container{
 //    border: 1px solid red;
 
@@ -92,53 +98,72 @@ width:100%;
     //  border: 1px solid red;
      margin: 2%;
  }
+ .formfield-a{
+  // border: 1px solid black;
+   display: flex ;
+   flex-direction: row;
+   gap:10%;
+   //justify-content: space-evenly;
+   width: inherit;
+   padding-bottom: 3%;
+
+}
+   
+   
+
+    // line-height: 10%;
+
+.formfield-b{
+   display: flex ;
+   flex-direction: column;
+   justify-content: center;
+   width :100%;
+   padding-bottom:3%;
+
+}
  
  .text-area{
     //border: 1px solid yellow;
-    width :inherit;
-    justify-content: left;
+    width :100%;
+   justify-content: left;
     justify-content: space-evenly;
   
  }
- .text-area{
-   &:NOT(:last-child){
-      margin-right: 20PX;
-   }
- }
+//  .textfield-a{
+//    &:NOT(:last-child){
+//       margin-right: 20PX;
+//    }
+//  }
  .text-area2{
     width :100%;
  }
- .form-body{
- //border: 1px solid black;
- width: 100%;
- display: flex;
- flex-direction: column;
- align-items: center;
- }
  
- .formfield-a{
-    display: flex ;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+ 
+
+ .textfield-a{
+width:45%
 
  }
-    
-    
-
-     // line-height: 10%;
-
- .formfield-b{
-    display: flex ;
-    flex-direction: column;
-    justify-content: center;
-    width :100%;
-
+ .textfield-b{
+width:45%
  }
+ .textfield-p{
+   width:45%
+   
+    }
+    .textfield-s{
+   width:45%
+    }
+  .formfield-c{
+   padding-bottom:0%;
+ }
+//  .showpass{
+//    padding-top: 2%;
+//  } 
  .logo-container{
    width: 70%;
    height: 50%;
-   text-align: center;
+   text-align: left;
 }
 .logo{
    text-align: center;
@@ -191,12 +216,71 @@ justify-content: left;
    font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
   // padding-bottom: 500%;
  }
+//  @media screen and (max-height: 1300px){ 
+//    body{
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: ;
+//  }}
+ @media screen and (max-width: 600px){ 
+   body{
+      padding-top: 0%;
+   }}
+
+
+ @media screen and (max-width: 600px){ 
+   .container { 
+     height: auto; 
+     min-height: 400px; 
+     overflow-y: auto;
+     padding: 0%;
+     
+   } }
+
+   @media screen and (max-width: 600px){ 
+       .form {
+           border: 0px solid white ;
+       }} 
  @media screen and (max-width: 1000px) {
    .right-container,image {
     display: none;
    }
  }
-//  @media screen and (max-width: 340px) {
+ @media screen and (max-width: 600px){ 
+   .formfield-a { 
+     display: flex ;
+     flex-direction: column;
+     align-items:center;
+     padding-bottom: 3%;
+     
+   } }
+   @media screen and (max-width: 600px){ 
+      .textfield-a,.textfield-b { 
+         width:100%;
+      }}
+   @media screen and (max-width: 600px){ 
+      .textfield-p,.textfield-s { 
+         width:100%;
+      }}
+      @media screen and (max-width: 300px){ 
+         .formfield-a { 
+           display: flex ;
+           flex-direction: column;
+           align-items:center;
+           padding-bottom: 9%;
+           
+         } }
+         @media screen and (max-width: 300px){ 
+            .textfield-p,.textfield-s { 
+               width:100%;
+               padding-bottom: 10%;
+            }}
+            @media screen and (max-width: 300px){ 
+               .textfield-a,.textfield-b { 
+                  width:100%;
+                  padding-bottom: 5%;
+               }}
+//  @media screen and (max-width: 600px) {
 //    .form-body {
 //    width:50%;
 //    }
