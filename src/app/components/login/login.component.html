@@ -13,6 +13,7 @@
 
 <div class="formfield">
   <form [formGroup]="loginform" >
+    <div class="text-field-a">
     <mat-form-field class="text-area2" appearance="outline">
       <mat-label>Email</mat-label>
       <input matInput placeholder="Placeholder" formControlName="email">
@@ -20,17 +21,21 @@
       <mat-error>Enter correct Email!</mat-error>
       <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
- 
+    </div>
+    <div class="text-field-b">
     <mat-form-field  class="text-area2" appearance="outline">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="password">
-      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <input matInput placeholder="Placeholder" formControlName="password" [type]=" showPassword ? 'text' : 'password' " >
+     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
       <mat-error>Enter correct Password!</mat-error>
       <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
+  </div>
   </form>
     <div>
-    <mat-checkbox class="example-margin-l">Show Password</mat-checkbox>
+      <mat-checkbox class="example-margin"  (click)='showHidePassword()'> {{ showPassword ? 'Hide' : 'Show' }} Password </mat-checkbox>
+
+      <!-- <mat-checkbox class="example-margin" [checked]="checked" (change)="checked = !checked">Checked</mat-checkbox> -->
     </div>
 
   <div>

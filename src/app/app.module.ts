@@ -11,12 +11,13 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import {  ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormControlName ,FormGroup,FormControl} from '@angular/forms';
 import { FormBuilder,Validators} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -45,7 +46,8 @@ import { FormBuilder,Validators} from '@angular/forms';
     MatButtonModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
     // FormBuilder,
     // Validators
     // FormGroup,
