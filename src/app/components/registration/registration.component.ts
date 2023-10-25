@@ -21,7 +21,7 @@ constructor(private FormBuilder:FormBuilder, private _snackbar:MatSnackBar,priva
 
 ngOnInit(){
   this.registerForm = this.FormBuilder.group({
-    firstname: ['', Validators.required],
+    firstname: ['', Validators.required], //Validators.pattern(/^[a-zA-Z]{5,}+$/)]
     lastname: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
@@ -42,7 +42,11 @@ signup(){
     email: this.registerForm.value.email,
     password: this.registerForm.value.password
  }
- this.userservice.signupService(reqpayload)
+ this.userservice.signupService(reqpayload).subscribe((response:any)=>{
+  console.log(response)
+ }, (error: any) => {
+  console.log("Error", error);
+ });
  alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
 
   }

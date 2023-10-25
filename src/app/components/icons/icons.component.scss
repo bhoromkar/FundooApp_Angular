@@ -1,0 +1,25 @@
+.iconsall{ 
+    display :flex;
+    flex-direction: row;
+    width:fit-content;
+    align-items: left;
+    align-content: left;
+    justify-content:space-evenly;
+    padding-left:2%
+}
+.iconedit{
+    padding-right: 50px;
+}
+@media screen and (max-width: 900px) {
+    .iconedit {
+    
+      padding-right: 25px;
+    }
+  }
+@media screen and (max-width: 600px) {
+    .iconedit {
+      
+      padding-right: 15px;
+    }
+  }
+ 
