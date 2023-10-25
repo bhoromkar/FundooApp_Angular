@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { UserserviceService } from './../../services/userservice/userservice.service';
 import { Component ,OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -40,7 +41,13 @@ export class LoginComponent implements OnInit{
       email: this.loginform.value.email,
       password: this.loginform.value.password
     }
-   this.userservice.loginService(reqPayload)
+   this.userservice.loginService(reqPayload).subscribe((response:any)=>{
+    console.log(response)
+    localStorage.setItem("token", response.result.token);
+   }, (error: any) => {
+    console.log("Error", error);
+   });
+
     
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginform.value, null, 4));
     }else{

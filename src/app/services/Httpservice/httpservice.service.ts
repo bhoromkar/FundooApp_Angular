@@ -10,14 +10,30 @@ type Isignup={
   email:string,
   password: string
 }
+type IReset={
+  
+  email:string,
+  password: string,
+  confirmpassword: string
+}
+type Iforget={
+  email:string,
+ 
+}
+type INote={
+  title:string;
+  description:string
+ 
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class HttpserviceService {
 
   constructor(private http:HttpClient) { }
-  BaseURL='https://localhost:5001';
-  PostService(url:string,reqBody:Isignup|Ilogin|any,token:boolean,httpOption:any){
+  BaseURL='https://localhost:5001/api/';
+  PostService(url:string,reqBody:INote|Iforget|Isignup|Ilogin|IReset|any,token:boolean,httpOption:any){
     console.log("reqbody",reqBody);
     console.log("reqdata",this.BaseURL+url);
 

@@ -18,7 +18,20 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormControlName ,FormGroup,FormControl} from '@angular/forms';
 import { FormBuilder,Validators} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef, OnDestroy} from '@angular/core';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {NgIf, NgFor} from '@angular/common';
+import { IconsComponent } from './components/icons/icons.component';
+import { NotesComponent } from './components/notes/notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component'; // Import MatCardModule
 
 
 
@@ -31,11 +44,20 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
+    DashboardComponent,
+    IconsComponent,
+    NotesComponent,
+    GetallnotesComponent,
+    DisplaynotesComponent,
    
     
 
 
   ],
+  
+   
+   
+ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,7 +69,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+     MatListModule,
+    MatToolbarModule,
+    MatDialogModule,
+    FormsModule,
+    MatCardModule
     // FormBuilder,
     // Validators
     // FormGroup,
