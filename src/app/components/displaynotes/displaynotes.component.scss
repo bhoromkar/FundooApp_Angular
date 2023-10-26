@@ -1,0 +1,83 @@
+.note-card {
+    width: 300px;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  .card{
+    background-color:#FAFAFA;
+  }
+  .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .left-side{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    justify-content:left;
+   // width: 100%;
+  }
+ .notetitleshow {
+  width: 250px;
+  }
+  // .right-side{
+  //   display: flex;
+  //   flex-direction: row;
+   
+  //   justify-content:space-evenly;
+   
+  // }
+
+  
+  .note-card.hover-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .note-title {
+    width: 100%;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    font-size: 18px;
+  }
+  
+  .note-content {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .note-content:focus, .note-title:focus {
+    outline: none;
+  }
+  .title{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+  .footer{
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+  }
+  /* your-component.component.css */
+.content {
+  background-color: lightgray;
+  padding: 20px;
+  transition: opacity 0.3s; /* Add a transition for smooth opacity changes */
+}
+
+.content:hover {
+  opacity: 1;
+}
+
+.content:not(:hover) {
+  opacity: 0.6; /* Adjust the opacity value as needed */
+}

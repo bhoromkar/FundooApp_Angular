@@ -11,6 +11,7 @@ import {FormsModule,FormBuilder, FormGroup} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { IconsComponent } from '../icons/icons.component';
+import { Observable } from 'rxjs';
 
 // export interface DialogData {
 //   title: string;
@@ -25,8 +26,8 @@ import { IconsComponent } from '../icons/icons.component';
 export class NotesComponent implements OnInit {
   notesForm!:FormGroup;
   rePayload:any;
-  title: any;
-  description: any;
+  noteDescription: any;
+  noteTitle: any;
   color: any;
   token:any;
   isShow = false;
@@ -42,9 +43,13 @@ export class NotesComponent implements OnInit {
     //   description: this.description,
     //   color: this.color
     // }
+    const myObservable = new Observable<ArrayBuffer>((observer) => {
+     
+    });
+    
     this.notesForm = this.FormBuilder.group({
-    title:this.title,
-    description:this.description 
+      noteTitle:this.noteTitle,
+      noteDescription:this.noteDescription 
   });
   }
 
@@ -53,12 +58,11 @@ export class NotesComponent implements OnInit {
     
   }
   Close() {
-
     this.isShow = false;
 // console.log("notes",this.notesForm.value)
     let rePayload={
-      "title":this.notesForm.get('title')?.value,
-      "description":this.notesForm.get('description')?.value,
+      "noteTitle":this.notesForm.get('noteTitle')?.value,
+      "noteDescription":this.notesForm.get('noteDescription')?.value,
       "color":this.notesForm.get('color')?.value,
     
     }
@@ -70,10 +74,10 @@ export class NotesComponent implements OnInit {
     console.log("rwPayload",rePayload);
 
     
-      this._snackbar.open('Note Created successfully', '', {
-        duration: 3000,
-        verticalPosition: 'bottom'
-      })
+      // this._snackbar.open('Note Created successfully', '', {
+      //   duration: 3000,
+      //   verticalPosition: 'bottom'
+      // })
 
     }
   }
