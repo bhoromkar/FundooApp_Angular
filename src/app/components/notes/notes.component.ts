@@ -32,7 +32,7 @@ export class NotesComponent implements OnInit {
   token:any;
   isShow = false;
  
-  @Input() noteCard: any;
+  @Input() note: any;
   
   constructor(private FormBuilder:FormBuilder, private _snackbar:MatSnackBar,private noteservice:NotesserviceService){
   this.token = localStorage.getItem('token');}

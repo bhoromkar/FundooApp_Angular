@@ -60,10 +60,9 @@ svg  {
 //   align-items: center;
 //   justify-content: center;
 
-.logo{
-  width: 36px;
-  
-}
+
+
+
 .icons{
   flex: display;
   flex-direction: row;
@@ -124,38 +123,54 @@ padding-top: 5px;
     flex: 1 0 auto;
     //border: 1px solid violet ;
   }
-  nosubmit {
-    border: none;
-    padding: 0;
-    margin-left: 5%;
-    width:100%
-  }
+//   padding-top
+// padding-right
+// padding-bottom
+// padding-left
   
-  nosubmit {
+.logo{
+  width: 36px;
+  
+}
+@media screen and (max-width: 350px) {
+  h1.example-app-name{
+    font-size: smaller;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .logo{
+display: none;
+width:1%;
+  }
+}
+  .nosubmit {
     border-radius: 8px;
-    margin-left: 25%;
+    //margin-left: 25%;
+    border:none;
     height: 10%;
     width:100% ;
-    //border: 1px solid rgb(194, 189, 189);
+   // border: 1px solid rgb(194, 189, 189);
     display: block;
-    padding: 20px 16px 18px 80px;
+    padding: 4px 4px 4px 4px;
     background-color: #F1F2F5;
     background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
-  
+  // border:1px solid red;
   }
   
-  nosubmit.hover {
-    border-radius: 8px;
-    margin-left: 0%;
-    height: 10%;
-    width: 200%;
-    //border: 1px solid rgb(194, 189, 189);
-    display: block;
-    padding: 15px 16px 18px 80px;
-    background-color: #F1F2F5;
-    background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
-    box-shadow: 0px 0px 10px 0px #c4c4c4;
-  }
+  // .nosubmit.hover {
+  //   border-radius: 8px;
+  //   margin-left: 0%;
+  //   height: 10%;
+  //   width: 200%;
+  //   //border: 1px solid rgb(194, 189, 189);
+  //   display: block;
+  //   padding: 15px 16px 18px 80px;
+  //   background-color: #F1F2F5;
+  //   background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  //   box-shadow: 0px 0px 10px 0px #c4c4c4;
+  // }
   
 //   @media screen and (min-width: 768px) and (max-width: 1024px) {
 //     input.nosubmit {
@@ -185,16 +200,17 @@ padding-top: 5px;
      
 //   }
 // }
-  input.nosubmit{
+  .nosubmit input{
     border-radius: 8px;
-    margin-left: 22px;
+    border:none;
+    outline:none;
     height: 10%;
     width: 100%;
-   // border: 1px solid rgb(194, 189, 189);
+  border: 1px solid rgb(194, 189, 189);
     display: block;
     padding: 15px 16px 18px 80px;
     background-color:#F1F2F5;
-    background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+   //background:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
     box-shadow: 0px 0px 10px 0px #dddddd;
   }
   .full-container{
@@ -212,6 +228,10 @@ padding-top: 5px;
     justify-content: left
     
   }
+  @media screen and (min-width: 300px) {
+
+  }
+
   .middle-conatiner{
    // border:1px solid green;
     display: flex;

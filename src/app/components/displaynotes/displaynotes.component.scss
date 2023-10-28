@@ -1,10 +1,68 @@
+.display-container{
+padding-left:50px;
+}
+.note{
+  display :flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+
+ 
+
+}
+.notelist{
+ padding-bottom: 15px;
+ padding-right: 15px;
+
+}
 .note-card {
     width: 300px;
     display: inline-block;
-    margin: 10px;
+    //margin: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
+}
+    
+      
+    @media screen and (max-width: 712px) {
+      .pinit{
+        
+        padding-left: 200px;
+      }
+    }
+    @media screen and (max-width: 585px) {
+      .pinit{
+        
+        padding-left: 80px;
+      }
+    }
+    @media screen and (max-width: 441px) {
+      .pinit{
+        
+        padding-left: 1px;
+      }
+    }
+
+ 
+
+  @media screen and (max-width: 712px) {
+    .note-card{
+      
+      width: 500px;
+    }
+  }
+  @media screen and (max-width: 585px) {
+    .note-card{
+      
+      width: 366px;
+    }
+  }
+  @media screen and (max-width: 441px) {
+    .note-card{
+      
+      width: 295px;
+    }
   }
   .card{
     background-color:#FAFAFA;
@@ -17,12 +75,24 @@
   .left-side{
     display: flex;
     flex-direction: row;
-    flex:1;
+   flex:1;
     justify-content:left;
    // width: 100%;
   }
  .notetitleshow {
   width: 250px;
+  overflow: hidden; 
+  min-height:10px ;
+  min-width:238px;
+  max-width:238px;
+  max-height:35px;
+  }
+  .note-description{
+    overflow: hidden;
+    min-height:20px ;
+  min-width:238px;
+  max-width:238px;
+  max-height:48px;
   }
   // .right-side{
   //   display: flex;
@@ -39,7 +109,7 @@
   }
   
   .note-title {
-    width: 100%;
+    width: 98%;
     font-weight: 400;
     border: none;
     outline: none;
@@ -56,11 +126,12 @@
   
   .note-content:focus, .note-title:focus {
     outline: none;
+  //  justify-content: end;
   }
   .title{
     display:flex;
     flex-direction: row;
-    justify-content: end;
+    //justify-content: end;
   }
   .footer{
   padding-bottom: 5px;

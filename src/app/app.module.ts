@@ -32,6 +32,8 @@ import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { ArchieveComponent } from './components/archieve/archieve.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 
 
@@ -49,6 +51,8 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     NotesComponent,
     GetallnotesComponent,
     DisplaynotesComponent,
+    ArchieveComponent,
+    TrashComponent,
   
    
     

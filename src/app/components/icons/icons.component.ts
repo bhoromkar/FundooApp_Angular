@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,Input} from '@angular/core';
 
 @Component({
   selector: 'app-icons',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent {
-
+@Input() note :any;
   
   title: string ='';
  description: string='';
@@ -15,7 +15,7 @@ export class IconsComponent {
   isTrashed: boolean = false;
   isArchived: boolean = false;
 
-  togglePin() {
+   collab() {
     this.isPinned = !this.isPinned;
   }
 
@@ -27,7 +27,22 @@ export class IconsComponent {
     this.isTrashed = !this.isTrashed;
   }
 
-  toggleArchive() {
+  Archive() {
     this.isArchived = !this.isArchived;
   }
+  addcolor(){
+
+  }
+  addimage(){
+
+  }
+archive(){
+
+}
+unarchieve(){
+
+}
+more(){
+
+}
 }

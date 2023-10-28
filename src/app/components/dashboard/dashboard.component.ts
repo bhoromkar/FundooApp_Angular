@@ -25,7 +25,9 @@ export class DashboardComponent implements OnDestroy{
     //   () => 
     //    -
     // );
-  
+    toggleRemind(){
+
+  }
     private _mobileQueryListener: () => void;
   
     constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
