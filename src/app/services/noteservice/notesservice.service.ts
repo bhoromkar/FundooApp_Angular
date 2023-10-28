@@ -16,14 +16,44 @@ export class NotesserviceService {
     this.token=localStorage.getItem('token')
     
     const httpOPtions={
-    Headers:new HttpHeaders({
+    headers:new HttpHeaders({
       'Content-Type':'application/json',
-      Authorization: 'Bearer'  + this.token,
+      Authorization: 'Bearer '  + this.token,
 
     })
     };
     return this.httpservice.PostService('Note/Create', reqdata, true, httpOPtions);
   }
+  
+  getallnotes(){
+    this.id = localStorage.getItem("user_id");
+    // let data ={
+    //   userId :this.id
+    //   }
+    //   console.log(data,"data")
+      this.token=localStorage.getItem('token');
+      const httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          Authorization: 'Bearer '  + this.token,//token
+    
+        })
+        };
+        return this.httpservice.GetService('Note/GetAll', true, httpOptions);
+
+}
+ArchieveNotes(reqdata:any){
+  this.token=localStorage.getItem('token');
+      const httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          Authorization: 'Bearer '  + this.token,//token
+    
+        })
+        };
+        return this.httpservice.PostService('Note/Archieve',reqdata, true, httpOptions);
+
+}
 }
 
 

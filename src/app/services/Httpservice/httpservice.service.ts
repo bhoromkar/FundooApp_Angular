@@ -40,8 +40,8 @@ export class HttpserviceService {
     return this.http.post(this.BaseURL+url,reqBody,token && httpOption)
   
   }
-  GetService(){
-
+  GetService(url: string,token:boolean=false,httpOptions:any){
+    return this.http.get(this.BaseURL+url,token && httpOptions);
   }
   PutService(){
     

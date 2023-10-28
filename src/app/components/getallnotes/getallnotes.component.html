@@ -1,1 +1,17 @@
-<p>getallnotes works!</p>
+<!-- 
+<form [formGroup]="get">
+<div>
+    <h1>Notes</h1>
+    <div *ngFor="let note of notesarray">
+      <div class="note">
+        <h2>{{ note.noteTitle }}</h2>
+        <p>{{ note.noteDescription }}</p>
+      </div>
+    </div>
+  </div>
+</form> -->
+<!-- <app-displaynotes *ngFor="let note of notesArray"   [notesArray]="note"  ></app-displaynotes> -->
+<!-- <app-displaynotes   [messageOFCHILD]="messageOFPARENT"  ></app-displaynotes> -->
+<div>
+<app-displaynotes   [notesArray]="notesArray"  ></app-displaynotes>
+</div>

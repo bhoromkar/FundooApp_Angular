@@ -1,31 +1,53 @@
 .note-container {
+  border:1px solid rgb(0, 19, 128);
   border: 1px solid;
   border-color: transparent;
   box-shadow: 1px 1px 3px 3px rgba(157, 167, 170, 0.215);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+ justify-content: center;
   padding-bottom: 10px;
   background-color: transparent;
   width: 750px;
   margin: 31px;
   margin-left: 328px;
 }
+.title-pin{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
 
 .title {
+  display: flex;
+flex-direction: row;
+justify-content: left;
+ // border:1px solid rgb(168, 20, 38);
   min-height: 10px;
   background-color: transparent;
   padding: 10px 15px;
   padding-top: 0px;
-  padding-right: 289px;
-  padding-bottom: 30px;
+ //padding-right: 289px;
+ // padding-bottom: 30px;
   padding-left: 15px;
   font-size: large;
-  width: 420px;
+  width: 598px;
+  height:44px;
   border: none;
   outline: none;
   font: normal 18px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+}
+.pin {
+  
+  opacity: 0.7;
+  display: flex;
+flex-direction: row;
+justify-content: end;
+align-items: right;
+padding-right: 10px;
+padding-top: 10px;
+
 }
 
 .take-note {
@@ -33,7 +55,11 @@
   flex-direction: column-reverse;
   background-color: transparent;
 }
-
+input{
+  outline:none;
+  border:none;
+  background-color: #FAFAFA;
+}
 .s-btn {
   border: none;
   background: transparent;
@@ -60,7 +86,9 @@
 }
 
 .icons {
-  padding-left: 579px;
+  display:flex;
+  flex-direction: row;
+  justify-content: right;
   opacity: 0.7;
   margin-bottom: -27px;
 }
@@ -76,24 +104,23 @@
 
 .close {
   display: flex;
-  font-size: large;
+  font-size: medium;
   background-color: transparent;
   border: 0px transparent;
-  margin-right: 40px;
+  
   padding-top: 15px;
   justify-content: space-between;
   border: none;
+  padding-right: 10px;
 
 }
 
-.pin {
-  opacity: 0.7;
-  cursor: pointer;
-}
+
 .iconsall{
  display: flex;
  flex-direction: row;
  gap:30px;
+
  
 }
 
@@ -115,9 +142,7 @@
   .icons {
       padding-left: 160px;
   }
-  .pin{
-      display: none;
-  }
+  
 }
 @media screen and (max-width:1100px) {
   .note-container {
@@ -125,12 +150,14 @@
       margin: 14px;
       margin-left: 50px;
   }
+}
 @media screen and (max-width:900px) {
   .note-container {
       width: 450px;
       margin: 14px;
       margin-left: 35px;
   }
+}
   @media screen and (max-width:601px) {
     .note-container {
         width: 350px;
@@ -144,14 +171,5 @@
   // .icons {
   //     padding-left: 160px;
   // }
-  .pin{
-      display: none;
-  }
-}
-@media screen and (max-width: 900px) {
-  .pin {
-    background-color: lightgreen;
-    padding-right: 25px;
-  }
-}
-}
+  
+

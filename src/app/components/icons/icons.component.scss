@@ -5,21 +5,42 @@
     align-items: left;
     align-content: left;
     justify-content:space-evenly;
-    padding-left:2%
+    padding-left:5px;
+    gap:20px;
+    opacity: .5;
 }
-.iconedit{
-    padding-right: 50px;
-}
-@media screen and (max-width: 900px) {
-    .iconedit {
+
+// .iconedit{
+//     padding-right: 50px;
+// }
+// @media screen and (max-width: 1100px) {
+//   .iconedit {
+  
+//     padding-right: 40px;
+//   }
+// }
+// @media screen and (max-width: 900px) {
+//     .iconedit {
     
-      padding-right: 25px;
-    }
-  }
-@media screen and (max-width: 600px) {
-    .iconedit {
+//       padding-right: 30px;
+//     }
+//   }
+// @media screen and (max-width: 600px) {
+//     .iconedit {
       
-      padding-right: 15px;
-    }
-  }
+//       padding-right: 20px;
+//     }
+//   }
+//   @media screen and (max-width: 400px) {
+//     .iconedit {
+      
+//       padding-right: 10px;
+//     }
+//   }
+//   @media screen and (max-width: 200px) {
+//     .iconedit {
+      
+//       padding-right: 7px;
+//     }
+//   }
  
