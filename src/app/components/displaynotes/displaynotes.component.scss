@@ -81,14 +81,18 @@ padding-left:50px;
   }
  .notetitleshow {
   width: 250px;
+  white-space: nowrap;
   overflow: hidden; 
+  text-overflow: ellipsis;
   min-height:10px ;
   min-width:238px;
   max-width:238px;
   max-height:35px;
   }
   .note-description{
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
     min-height:20px ;
   min-width:238px;
   max-width:238px;

@@ -1,48 +1,100 @@
-import { Component ,Input} from '@angular/core';
-
+import { DataserviceService } from './../../services/dataservice.service';
+import { NotesserviceService } from './../../services/noteservice/notesservice.service';
+import { Component, Input, OnInit,EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
   styleUrls: ['./icons.component.scss']
 })
-export class IconsComponent {
-@Input() note :any;
+export class IconsComponent implements OnInit {
   
+@Input() noteobject :any;
+@Output() displayicon= new EventEmitter<any>();
+@Output() uarchieve= new EventEmitter<any>();
+  data:any;
+  noteId:any;
   title: string ='';
  description: string='';
   isPinned: boolean = false;
   isReminded: boolean = false;
   isTrashed: boolean = false;
   isArchived: boolean = false;
-
-   collab() {
-    this.isPinned = !this.isPinned;
+   constructor(private noteservice:NotesserviceService,private dataservice:DataserviceService){}
+  ngOnInit(): void {
+    // console.log("notes has archive",this.noteobject);
+   
   }
-
-  toggleRemind() {
-    this.isReminded = !this.isReminded;
-  }
-
-  toggleTrash() {
-    this.isTrashed = !this.isTrashed;
-  }
-
   Archive() {
-    this.isArchived = !this.isArchived;
+    if(this.noteobject.isArchive==false && this.noteobject.isTrash==false){
+        //this.isArchived = !this.isArchived;
+        this.data=this.noteobject.noteId;
+      console.warn("Note(" ,this.noteobject.noteId);
+      let rePayload={
+        noteId:this.data,
+      }
+  this.noteservice.ArchieveNotes(rePayload).subscribe((response:any) =>
+  {console.log('Response Data', response)
+  
+  this.displayicon.emit(this.data);
+  alert("The noteId is " + this.data);  
+});
+    }
   }
-  addcolor(){
-
+  unArchive() {
+    if(this.noteobject.isArchive==true && this.noteobject.isTrash==false){
+        //this.isArchived = !this.isArchived;
+        this.data=this.noteobject.noteId;
+      console.warn("Note(" ,this.noteobject.noteId);
+      let rePayload={
+        noteId:this.data,
+      }
+  this.noteservice.UnarchieveNotes(rePayload).subscribe((response:any) =>
+  {console.log('Response Data', response)
+  
+  this.uarchieve.emit(this.noteobject);
+  alert("The noteId is " + this.noteobject);  
+});
+    }
   }
-  addimage(){
+  Trash() {
+    if(this.noteobject.isArchive==false && this.noteobject.isTrash==false){
+        //this.isArchived = !this.isArchived;
+        this.data=this.noteobject.noteId;
+      console.warn("Note(" ,this.noteobject.noteId);
+      let rePayload={
+        noteId:this.data,
+      }
+  this.noteservice.TrashNotes(rePayload).subscribe((response:any) =>
+  { 
+    console.log('Response Data', response)
+    this.displayicon.emit(response)
 
+});
+    }
   }
-archive(){
+  // }
+  
+      
+  
+         
+    //   console.log("notes has archive",this.noteobject);
+    // this.isArchived = !this.isArchived;
+  // )}
 
-}
-unarchieve(){
+//   addcolor(){
 
-}
-more(){
+//   }
+//   addimage(){
 
-}
+//   }
+// archive(){
+
+// }
+// unarchieve(){
+
+// }
+// more(){
+
+// }
+
 }

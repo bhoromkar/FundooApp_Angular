@@ -25,6 +25,9 @@ type INote={
   description:string
  
 }
+type Iarchive={
+  noteId:number;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +36,7 @@ export class HttpserviceService {
 
   constructor(private http:HttpClient) { }
   BaseURL='https://localhost:5001/api/';
-  PostService(url:string,reqBody:INote|Iforget|Isignup|Ilogin|IReset|any,token:boolean,httpOption:any){
+  PostService(url:string,reqBody:Iarchive|INote|Iforget|Isignup|Ilogin|IReset|any,token:boolean,httpOption:any){
     console.log("reqbody",reqBody);
     console.log("reqdata",this.BaseURL+url);
 
@@ -46,7 +49,14 @@ export class HttpserviceService {
   PutService(){
     
   }
-  PatchService(){
+  PatchService(url:string,reqBody:Iarchive|any,token:boolean,httpOption:any){
+    {
+      console.log("reqbody",reqBody);
+      console.log("reqdata",this.BaseURL+url);
+  
+      return this.http.patch(this.BaseURL+url,reqBody,token && httpOption)
+    
+    }
     
   }
   DeleteService(){

@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class ArchieveComponent {
   token:any;
   notesArray:any;
+  response:any;
   archivenotes:any=[];
 
   constructor(private noteservice:NotesserviceService){
@@ -34,8 +35,15 @@ console.log(this.archivenotes);
     
   })
 }
-}
 
+recievefromiconstodisplaycard($event: any) {
+  console.log("note archieved fromm archives", $event);
+  this.response=$event.result;
+  console.log(this.response);
+  this.getAllNotes();
+  //this.Displaynotes.emit($event)
+}
+}
 
 
 
