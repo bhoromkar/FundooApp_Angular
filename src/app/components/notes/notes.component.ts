@@ -1,3 +1,4 @@
+import { DataserviceService } from './../../services/dataservice.service';
 import { NotesserviceService } from './../../services/noteservice/notesservice.service';
 import { Component, Input, TemplateRef, ViewChild, OnInit } from '@angular/core';
 import { EventEmitter,  Output } from '@angular/core';
@@ -33,16 +34,12 @@ export class NotesComponent implements OnInit {
   isShow = false;
  
   @Input() note: any;
-  
-  constructor(private FormBuilder:FormBuilder, private _snackbar:MatSnackBar,private noteservice:NotesserviceService){
+  @Output() Displaynotes = new EventEmitter<any>;
+  constructor(private FormBuilder:FormBuilder, private _snackbar:MatSnackBar,private noteservice:NotesserviceService,private dataservice:DataserviceService){
   this.token = localStorage.getItem('token');}
 
   ngOnInit() :void{
-    // this.data = {
-    //   title: this.title,
-    //   description: this.description,
-    //   color: this.color
-    // }
+
     const myObservable = new Observable<ArrayBuffer>((observer) => {
      
     });
@@ -58,6 +55,7 @@ export class NotesComponent implements OnInit {
     
   }
   Close() {
+    
     this.isShow = false;
 // console.log("notes",this.notesForm.value)
     let rePayload={
@@ -68,12 +66,18 @@ export class NotesComponent implements OnInit {
     }
     this.noteservice.createnote(rePayload).subscribe((response:any)=>{
       console.log(response)
+      console.log(response.result);
+      
+      this.Displaynotes.emit(response);
      }, (error: any) => {
       console.log("Error", error);
      });
-    console.log("rwPayload",rePayload);
+   
 
-    
+     this.noteTitle = '';
+     this.noteDescription = '';
+
+
       // this._snackbar.open('Note Created successfully', '', {
       //   duration: 3000,
       //   verticalPosition: 'bottom'

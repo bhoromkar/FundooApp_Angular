@@ -4,9 +4,11 @@
 *ngFor="let note of notesArray"
   class="notelist">
   <!-- *ngFor="let note of notesArray" -->
-<!-- <div (onmouseover)="openDialog()" class="card"> -->
-  <!-- Your card content goes here -->
-  <div (click)="opendialog()" class="note-card">
+<!-- <div (click)="opendialog(note)" class="card"> -->
+  <!-- Your card content goes here 
+  app-notes -->
+  <div  class="card">
+  <div class="note-card">
 <mat-card class="note-card" [ngClass]="{'hover-effect': hover}">
     <mat-card-header>
       
@@ -42,7 +44,7 @@
       <div class="footer"  (mouseenter)="onMouseEnter()"
       (mouseleave)="onMouseLeave()"
       [ngStyle]="{ 'opacity': isMouseOver ? 1.0 : 0.0 }">
-       <app-icons [note]="note"></app-icons>
+       <app-icons (displayicon)="recievefromiconstodisplaycard($event)" (uarchieve)="recievefromunarchieve($event)" [noteobject]="note"></app-icons>
       </div>
       </mat-card-footer>
   </mat-card>
@@ -51,6 +53,7 @@
 </div>
 </div>
 <!-- <div> say{{messageOFCHILD}}</div> -->
+</div>
 <!-- </div> -->
 
   

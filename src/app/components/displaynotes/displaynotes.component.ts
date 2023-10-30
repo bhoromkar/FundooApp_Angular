@@ -1,5 +1,5 @@
 import { FormsModule } from '@angular/forms';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output ,OnInit} from '@angular/core';
 import { UserserviceService } from 'src/app/services/userservice/userservice.service';
 import { NotesserviceService } from 'src/app/services/noteservice/notesservice.service';
 import { MatDialog,MatDialogRef } from '@angular/material/dialog';
@@ -9,15 +9,18 @@ import { MatDialog,MatDialogRef } from '@angular/material/dialog';
   templateUrl:'./displaynotes.component.html',
   styleUrls: ['./displaynotes.component.scss']
 })
-export class DisplaynotesComponent {
+export class DisplaynotesComponent implements OnInit {
   selectedOption: string | undefined;
   hover: boolean = false;
   token:any;
  // notesarray :any=[];  
-    note!: any[];
+    //note!: any[];
+    note:any;
+    response:any;
+    noteID:any;
   @Input() notesArray: any;
-  @Input()messageOFCHILD!: string;
-  @Input() singlenote :any;
+  @Output() Displaynotes= new EventEmitter<any>;
+
  
 
    
@@ -28,7 +31,7 @@ export class DisplaynotesComponent {
    
   
     ngOnInit(): void {
-    
+    this.recievefromiconstodisplaycard(event)
     }
   
 
@@ -45,31 +48,47 @@ export class DisplaynotesComponent {
       this.isMouseOver = false;
     }
     
-  openDialog(): void {
-    const dialogRef = this.dialog.open(this.notesArray, {
-      width: '350px',
-      height:'150px' // Adjust the width as needed
-    });
+    
+  // openDialog(note:any): void {
+  //   const dialogRef = this.dialog.open(this.note, {
+  //     width: '350px',
+  //     data:note
+  //     //height:'150px' // Adjust the width as needed
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //   });
+  // }
+  // opendialog(note:any) {
+  //   let dialogRef = this.dialog.open(note,);
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     this.selectedOption = result;
+  //   });
+  // }
+  
+
+  
+recievefromiconstodisplaycard($event: any) {
+  console.log("note archieved", $event);
+  this.response=$event;
+  this.noteID=this.response;
+    const index = this.notesArray.findIndex((note:any) => note.noteId === this.noteID);
+    if (index !== -1) {
+      this.notesArray.splice(index, 1); // Removes 1 element at the found index
+    }
   }
-  opendialog() {
-    let dialogRef = this.dialog.open(this.notesArray,);
-    dialogRef.afterClosed().subscribe(result => {
-      this.selectedOption = result;
-    });
+  recievefromunarchieve($event: any){
+    console.log("note unarchieved", $event);
+    this.response=$event;
+    this.noteID=this.response;
+    this.notesArray.push(this.response);
+    alert("notes unarchieve " + this.response)
   }
+  
+
+  // console.log(this.response);
+  
+  // this.Displaynotes.emit($event)
 }
-
-
-// @Component({
-//   selector: 'dialog-result-example-dialog',
-//   templateUrl: './dialog-result-example-dialog.html',
-// })
-// export class DialogResultExampleDialog {
-//   constructor(private dialogRef: MdDialogRef<DisplaynotesComponent>) {}
-// }
-
 

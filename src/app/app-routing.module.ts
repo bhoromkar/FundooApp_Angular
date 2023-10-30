@@ -18,23 +18,18 @@ const routes: Routes = [
   {path:'reset-password/:token',component:ResetPasswordComponent},
   {
     path:'dashboard', component:DashboardComponent,
-children:[{ path: 'display', component:DisplaynotesComponent },//remove this
-          { path: 'note', component:NotesComponent},
-          // { path: 'trash', component:TrashComponent },
-          // { path: 'archive', component:ArchieveComponent }
-          // { path:'allnotes', component:GetallnotesComponent}
+children:[
+  { path:'allnotes', component:GetallnotesComponent},
+          { path: 'trash', component:TrashComponent },
+          { path: 'archive', component:ArchieveComponent },
+          
         ]
        
         },
-        
+       
       
         
-  {path:'icons', component:IconsComponent},
-  {path:'notes',component:NotesComponent},
-  { path: 'allnotes', component:GetallnotesComponent},
-  {path:'display',component:DisplaynotesComponent},
-  {path:'archive',component:ArchieveComponent},
-  { path: 'trash', component:TrashComponent },
+
 
 ];
 

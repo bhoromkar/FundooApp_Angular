@@ -51,7 +51,31 @@ ArchieveNotes(reqdata:any){
     
         })
         };
-        return this.httpservice.PostService('Note/Archieve',reqdata, true, httpOptions);
+        return this.httpservice.PostService('Note/Archieve?noteId='+(reqdata.noteId),reqdata, true, httpOptions);
+
+}
+UnarchieveNotes(reqdata:any){
+  this.token=localStorage.getItem('token');
+      const httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          Authorization: 'Bearer '  + this.token,//token
+    
+        })
+        };
+        return this.httpservice.PostService('Note/UnArchieve?noteId='+(reqdata.noteId),reqdata, true, httpOptions);
+
+}
+TrashNotes(reqdata:any){
+  this.token=localStorage.getItem('token');
+      const httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          Authorization: 'Bearer '  + this.token,//token
+    
+        })
+        };
+        return this.httpservice.PostService('Note/Trash?noteId='+(reqdata.noteId),reqdata, true, httpOptions);
 
 }
 }
