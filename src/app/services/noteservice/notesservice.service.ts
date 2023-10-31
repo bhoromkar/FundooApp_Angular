@@ -5,7 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NotesserviceService {
-
+ 
   token: any;
   id: any;
   constructor(private httpservice:HttpserviceService) { }
@@ -40,8 +40,24 @@ export class NotesserviceService {
         })
         };
         return this.httpservice.GetService('Note/GetAll', true, httpOptions);
+      
+      
 
 }
+updatenotes(reqpayload:any)
+{
+  this.token=localStorage.getItem('token')
+    
+  const httpOPtions={
+  headers:new HttpHeaders({
+    'Content-Type':'application/json',
+    Authorization: 'Bearer '  + this.token,
+
+  })
+  };
+  return this.httpservice.PutService('Note/Update', reqpayload, true, httpOPtions);
+}
+
 ArchieveNotes(reqdata:any){
   this.token=localStorage.getItem('token');
       const httpOptions={

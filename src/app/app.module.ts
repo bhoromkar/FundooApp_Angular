@@ -34,7 +34,8 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import { TrashComponent } from './components/trash/trash.component';
-
+import { UpdateComponenetComponent } from './components/update-componenet/update-componenet.component';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -53,6 +54,7 @@ import { TrashComponent } from './components/trash/trash.component';
     DisplaynotesComponent,
     ArchieveComponent,
     TrashComponent,
+    UpdateComponenetComponent,
   
    
     
@@ -80,7 +82,8 @@ import { TrashComponent } from './components/trash/trash.component';
     MatToolbarModule,
     MatDialogModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    //MatDialogRef
     // FormBuilder,
     // Validators
     // FormGroup,

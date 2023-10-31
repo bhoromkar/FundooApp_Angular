@@ -41,6 +41,8 @@
     min-width: 48px; 
     overflow: hidden; 
     width: 100%;
+       // border: 1px solid red ;
+
   }
   
 
@@ -121,7 +123,7 @@ padding-top: 5px;
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
-    //border: 1px solid violet ;
+   // border: 1px solid violet ;
   }
 //   padding-top
 // padding-right

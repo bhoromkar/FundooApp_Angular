@@ -1,5 +1,6 @@
 <div>
- 
+  <!-- <app-update-componenet (Displayupdatesnotes)="receiveMessagefromupdate($event)"></app-update-componenet> -->
+
   <app-notes (Displaynotes)="receiveMessagefromdisplaycard($event)"></app-notes>
-<app-displaynotes   [notesArray]="notesArray"   (Displaynotes)="receiveMessagefromdisplaycard($event)"></app-displaynotes>
+<app-displaynotes   [notesArray]="notesArray"   (Displaynotes)="receiveMessagefromdisplaycard($event)"   ></app-displaynotes>
 </div>

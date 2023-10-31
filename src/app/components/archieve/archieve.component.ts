@@ -11,12 +11,14 @@ export class ArchieveComponent {
   token:any;
   notesArray:any;
   response:any;
+  noteID:any;
   archivenotes:any=[];
 
   constructor(private noteservice:NotesserviceService){
   this.token=localStorage.getItem('token')}
   ngOnInit(): void {
     this.getAllNotes();
+    this.recievefromunarchieve(event);
   }
   getAllNotes(){
   
@@ -42,6 +44,21 @@ recievefromiconstodisplaycard($event: any) {
   console.log(this.response);
   this.getAllNotes();
   //this.Displaynotes.emit($event)
+}
+recievefromunarchieve($event: any){
+  console.log("note unarchieved", $event);  //noteobject
+  this.response=$event;
+  //this.noteID=this.response;
+  this.notesArray.push(this.response);
+  alert("notes unarchieve " + this.response)
+  console.log("note unarchived fromm archives", $event);
+  console.log(this.response);
+  this.noteID=this.response.noteId;
+  console.log(this.noteID);
+    const index = this.archivenotes.findIndex((note:any) => note.noteId === this.noteID);
+    if (index !== -1) {
+      this.archivenotes.splice(index, 1); // Removes 1 element at the found index
+    }
 }
 }
 
