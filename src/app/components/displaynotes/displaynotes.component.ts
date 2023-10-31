@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output ,OnInit} from '@angular/core';
 import { UserserviceService } from 'src/app/services/userservice/userservice.service';
 import { NotesserviceService } from 'src/app/services/noteservice/notesservice.service';
 import { MatDialog,MatDialogRef } from '@angular/material/dialog';
+import { UpdateComponenetComponent } from '../update-componenet/update-componenet.component';
 
 @Component({
   selector: 'app-displaynotes',
@@ -20,6 +21,7 @@ export class DisplaynotesComponent implements OnInit {
     noteID:any;
   @Input() notesArray: any;
   @Output() Displaynotes= new EventEmitter<any>;
+  resposne: any;
 
  
 
@@ -32,6 +34,7 @@ export class DisplaynotesComponent implements OnInit {
   
     ngOnInit(): void {
     this.recievefromiconstodisplaycard(event)
+    //this.recievefromunarchieve(event)
     }
   
 
@@ -49,17 +52,21 @@ export class DisplaynotesComponent implements OnInit {
     }
     
     
-  // openDialog(note:any): void {
-  //   const dialogRef = this.dialog.open(this.note, {
-  //     width: '350px',
-  //     data:note
-  //     //height:'150px' // Adjust the width as needed
-  //   });
+  openDialog(note:any): void {
+    const dialogRef = this.dialog.open(UpdateComponenetComponent, {
+      width: '752px',
+      height:'142px',
+      
+      data:note
+      
+      //height:'150px' // Adjust the width as needed
+    });
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log('The dialog was closed');
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+    this.Displaynotes.emit(note);
+  }
   // opendialog(note:any) {
   //   let dialogRef = this.dialog.open(note,);
   //   dialogRef.afterClosed().subscribe(result => {
@@ -85,7 +92,18 @@ recievefromiconstodisplaycard($event: any) {
     this.notesArray.push(this.response);
     alert("notes unarchieve " + this.response)
   }
-  
+ 
+  receiveMessagefromupdate($event: any){
+    console.log("updatednotes", $event);
+    this.resposne=$event.result;
+    if(this.resposne!=null){
+  this.notesArray.push(this.resposne);
+  this.notesArray.update(this.resposne);
+  this.notesArray.unshift(this.resposne);
+     console.log(this.resposne);
+    }
+    
+  }
 
   // console.log(this.response);
   

@@ -22,7 +22,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.scss']
+  styleUrls: ['./notes.component.scss'],
 })
 export class NotesComponent implements OnInit {
   notesForm!:FormGroup;

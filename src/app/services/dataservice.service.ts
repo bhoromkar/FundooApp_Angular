@@ -9,7 +9,7 @@ export class DataserviceService {
 
 
   private notesSource = new BehaviorSubject<string[]>([]);
-  notes$ = this.notesSource.asObservable();
+  notesArray$ = this.notesSource.asObservable();
 
   constructor() { }
   addNote(note: string) {

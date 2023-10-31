@@ -28,7 +28,9 @@ export class GetallnotesComponent implements OnInit {
  
 
   ngOnInit(): void {
+    
     this.getAllNotes()
+    this.receiveMessagefromdisplaycard(event)
   }
  
 
@@ -57,9 +59,13 @@ export class GetallnotesComponent implements OnInit {
     this.resposne=$event.result;
     if(this.resposne!=null){
   this.notesArray.push(this.resposne);
+  // this.notesArray.update(this.resposne);
+  // this.notesArray.unshift(this.resposne);
      console.log(this.resposne);
     }
     
      
   }
+  
+  
 }

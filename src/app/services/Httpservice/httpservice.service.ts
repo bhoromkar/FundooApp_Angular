@@ -28,6 +28,12 @@ type INote={
 type Iarchive={
   noteId:number;
 }
+type INoteupdate={
+  title:string;
+  description:string
+  noteId:number;
+ 
+}
 
 @Injectable({
   providedIn: 'root'
@@ -46,8 +52,8 @@ export class HttpserviceService {
   GetService(url: string,token:boolean=false,httpOptions:any){
     return this.http.get(this.BaseURL+url,token && httpOptions);
   }
-  PutService(){
-    
+  PutService(url:string,reqBody:INoteupdate|any,token:boolean,httpOption:any){
+    return this.http.put(this.BaseURL+url,reqBody,token && httpOption)
   }
   PatchService(url:string,reqBody:Iarchive|any,token:boolean,httpOption:any){
     {

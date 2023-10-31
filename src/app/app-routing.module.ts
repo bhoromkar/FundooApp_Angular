@@ -11,6 +11,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
 import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { UpdateComponenetComponent } from './components/update-componenet/update-componenet.component';
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
@@ -27,7 +28,7 @@ children:[
        
         },
        
-      
+      {path:'update', component:UpdateComponenetComponent}
         
 
 
