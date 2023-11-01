@@ -16,6 +16,7 @@ export class UpdateComponenetComponent implements OnInit{
   noteDescription:any;
   note:any;
   noteId:any;
+ 
   @Output() Displayupdatesnotes = new EventEmitter<any>;
 
   constructor(private noteservice:NotesserviceService,
@@ -44,9 +45,10 @@ export class UpdateComponenetComponent implements OnInit{
     noteId: this.noteId
     }
     this.noteservice.updatenotes(reqpayload).subscribe(( response:any)=>{
-      this.Displayupdatesnotes.emit(response);
+     
     console.log(response);
-    this.dialogRef.close(Response);
+    this.dialogRef.close(response.result);
+    this.Displayupdatesnotes.emit(response);
   });
 
   this.dialogRef.close();
