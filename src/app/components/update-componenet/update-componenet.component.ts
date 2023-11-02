@@ -16,8 +16,10 @@ export class UpdateComponenetComponent implements OnInit{
   noteDescription:any;
   note:any;
   noteId:any;
+  color:any;
+
  
-  @Output() Displayupdatesnotes = new EventEmitter<any>;
+  @Output() Displaynotes = new EventEmitter<any>;
 
   constructor(private noteservice:NotesserviceService,
     public dialogRef: MatDialogRef<UpdateComponenetComponent>,
@@ -25,12 +27,14 @@ export class UpdateComponenetComponent implements OnInit{
     this.noteTitle=data.noteTitle;
     this.noteDescription=data.noteDescription;
     this.noteId=data.noteId;
+    this.color=data.color;
     
   }
   ngOnInit(): void {
     this.notesForm = this.formBuilder.group({
       noteTitle:this.noteTitle,
-      noteDescription:this.noteDescription 
+      noteDescription:this.noteDescription,
+      color:this.color,
   });
   }
   updatenotes(){
@@ -42,20 +46,20 @@ export class UpdateComponenetComponent implements OnInit{
     let reqpayload={
       noteTitle:this.notesForm.get('noteTitle')?.value,
       noteDescription:this.notesForm.get('noteDescription')?.value,
-    noteId: this.noteId
+    noteId: this.noteId,
+    color:this.color,  
     }
     this.noteservice.updatenotes(reqpayload).subscribe(( response:any)=>{
      
     console.log(response);
     this.dialogRef.close(response.result);
-    this.Displayupdatesnotes.emit(response);
+   // this.Displaynotes.emit(response);
   });
 
   this.dialogRef.close();
   this.snackbar.open("Note Updated",'',{duration: 3000});
 }
-
-  }
+}
   
 
 

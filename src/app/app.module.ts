@@ -36,6 +36,9 @@ import { ArchieveComponent } from './components/archieve/archieve.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { UpdateComponenetComponent } from './components/update-componenet/update-componenet.component';
 import { MatDialogRef } from '@angular/material/dialog';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatMenuTrigger, MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -83,6 +86,8 @@ import { MatDialogRef } from '@angular/material/dialog';
     MatDialogModule,
     FormsModule,
     MatCardModule,
+    MatButtonToggleModule,
+    MatMenuModule
     //MatDialogRef
     // FormBuilder,
     // Validators

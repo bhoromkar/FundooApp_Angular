@@ -22,7 +22,7 @@ export class DisplaynotesComponent implements OnInit {
   @Input() notesArray: any;
   @Output() Displaynotes= new EventEmitter<any>;
   resposne: any;
-
+msg:any;
  
 
    
@@ -72,11 +72,11 @@ export class DisplaynotesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       //console.log('The dialog was closed respone from note componenet' );
       console.log(result ,"The dialog was closed respone from note componenet' ");
-      this.notesArray.push(result);
-     
+       this.notesArray.push(result);
+       this.Displaynotes.emit(result);
 
     });
-    this.Displaynotes.emit(note);
+   
   }
   // opendialog(note:any) {
   //   let dialogRef = this.dialog.open(note,);
@@ -84,18 +84,21 @@ export class DisplaynotesComponent implements OnInit {
   //     this.selectedOption = result;
   //   });
   // }
-  
+  recievefromiconstodisplaycardicon($event: any){
+this.msg=$event;
+this.Displaynotes.emit(this.msg);
+  }
 
   
-recievefromiconstodisplaycardicon($event: any) {
-  console.log("note archieved", $event);
-  this.response=$event;
-  this.noteID=this.response;
-    const index = this.notesArray.findIndex((note:any) => note.noteId === this.noteID);
-    if (index !== -1) {
-      this.notesArray.splice(index, 1); // Removes 1 element at the found index
-    }
-  }
+// recievefromiconstodisplaycardicon($event: any) {
+//   console.log("note archieved", $event);
+//   this.response=$event;
+//   this.noteID=this.response;
+//     const index = this.notesArray.findIndex((note:any) => note.noteId === this.noteID);
+//     if (index !== -1) {
+//       this.notesArray.splice(index, 1); // Removes 1 element at the found index
+//     }
+//   }
   recievefromunarchieve($event: any){
     console.log("note unarchieved", $event);
     this.response=$event;
