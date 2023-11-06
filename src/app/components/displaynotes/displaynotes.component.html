@@ -1,62 +1,53 @@
 <div class="display-container">
-<div class="note">
-<div 
-*ngFor="let note of notesArray"
-  class="notelist" >
-  <!-- *ngFor="let note of notesArray" -->
+  <div class="note">
+    <div *ngFor="let note of notesArray  | searchfilter: searchText" class="notelist">
+      <!-- //minheight and max height adjist here -->
+ 
+      <div class="card">
+        <div class="note-card">
+          <mat-card class="note-card" [ngClass]="{'hover-effect': hover}" [ngStyle]="{'background-color': note.color}"
+            [style.background]="note.color">
+            <div (click)="openDialog(note)" class="dialogbox">
+              <mat-card-header>
+                <mat-card-title>
+                  <div class="title">
+                    <div class="left-side">
+                      <p class="notetitleshow">
+              
+                        {{note.noteTitle}}
+                       
+                      </p>
+                    </div>
 
-  <!-- Your card content goes here 
-  app-notes -->
-  <div  class="card" >
-  <div class="note-card" >
-<mat-card class="note-card" [ngClass]="{'hover-effect': hover}" [ngStyle]="{'background-color': note.color}"[style.background]="note.color">
-  <div (click)="openDialog(note)" class="dialogbox">
-  <mat-card-header>
-      
-       
-      <mat-card-title>
-        <div class="title">
-       <div class="left-side">
-          <p class="notetitleshow"> 
-            <!-- <input [(ngModel)]="noteTitle" class="note-title" placeholder="Title"> -->
-             {{note.noteTitle}}
-             <!-- {{singlenote.noteTitle}} -->
-            </p>
+                    <div class="pinit" (click)="pinnednote(note)">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="#0000" d="M0 0h24v24H0z" />
+                        <path fill="#000"
+                          d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.11 0 2 .89 2 2zM9 4v7.75L7.5 14h9L15 11.75V4H9z" />
+                      </svg>
+                    </div>
+                  </div>
+                </mat-card-title>
+
+              </mat-card-header>
+              <mat-card-content>
+                <p class="note-description">
+                  {{note.noteDescription}}
+                
+                </p>
+               
+              </mat-card-content>
             </div>
-     
-       <div class="pinit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path fill="none" d="M0 0h24v24H0z"/>
-            <path fill="#000" d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.11 0 2 .89 2 2zM9 4v7.75L7.5 14h9L15 11.75V4H9z"/>
-          </svg>
+            <mat-card-footer>
+              <div class="footer">
+                <app-icons class="ic-hover"(displayicon)="recievefromiconstodisplaycardicon($event)"
+                  (uarchieve)="recievefromunarchieve($event)" [noteobject]="note"></app-icons>
+              </div>
+            </mat-card-footer>
+          </mat-card>
         </div>
       </div>
-      </mat-card-title>
-   
-    </mat-card-header>
-    <mat-card-content >
-     <p class="note-description" >
-      {{note.noteDescription}}
-      <!-- {{singlenote.noteDescription}} -->
-    </p>
-      <!-- <input type="text" [(ngModel)]="noteDescription" class="note-content" placeholder="Take a note...">   -->
-     </mat-card-content>
     </div>
-    <mat-card-footer>
-      <div class="footer"  (mouseenter)="onMouseEnter()"
-      (mouseleave)="onMouseLeave()"
-      [ngStyle]="{ 'opacity': isMouseOver ? 1.0 : 0.0 }">
-       <app-icons (displayicon)="recievefromiconstodisplaycardicon($event)" (uarchieve)="recievefromunarchieve($event)"  [noteobject]="note"></app-icons>
-      </div>
-      </mat-card-footer>
-  </mat-card>
-</div>
-</div>
-</div>
-</div>
-<!-- <div> say{{messageOFCHILD}}</div> -->
-</div>
-  <!-- <app-update-componenet (Displayupdatesnotes)="receiveMessagefromupdate($event)"></app-update-componenet> -->
+  </div>
 
-
-  
+</div>

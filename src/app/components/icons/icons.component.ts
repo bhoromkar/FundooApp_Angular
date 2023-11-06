@@ -27,17 +27,17 @@ export class IconsComponent implements OnInit {
   isArchived: boolean = false;
    constructor(private noteservice:NotesserviceService,private dataservice:DataserviceService,public dialog: MatDialog,private snackbar:MatSnackBar){}
    colors: Array<any> = [
-    { code: '#fff', name: 'white' },
-    { code: '#f28b82', name: 'red' },
-    { code: '#fbbc04', name: 'orange' },
-    { code: '#ffff00', name: 'yellow' },
-    { code: '#ccff90', name: 'green' },
-    { code: '#a7ffeb', name: 'teal' },
-    { code: '#cbf0f8', name: 'blue' },
-    { code: '#aecbfa', name: 'darkblue' },
-    { code: '#d7aefb', name: 'purple' },
-    { code: '#e6c9a8', name: 'brown' },
-    { code: '#e8eaed', name: 'grey' },
+    { code: '#FEFFFE', name: 'white' },
+    { code: '#FAAFA8', name: 'red' },
+    { code: '#F29F77', name: 'orange' },
+    { code: '#FEF9B8', name: 'yellow' },
+    { code: '#E2F6D3', name: 'green' },
+    { code: '#B4DDD3', name: 'teal' },
+    { code: '#D5E4EC', name: 'blue' },
+    { code: '#AFCCDD', name: 'darkblue' },
+    { code: '#D3BEDA', name: 'purple' },
+    { code: '#F6E3DC', name: 'brown' },
+    { code: '#EFEEF0', name: 'grey' },
 
   ];
 
@@ -45,12 +45,13 @@ export class IconsComponent implements OnInit {
     // console.log("notes has archive",this.noteobject);
    
   }
+   
   setcolors(color:any){
 return{
   'background':color
 }
   }
-  setColor(BACKGROUNDcolor:any){
+  setColor(BACKGROUNDcolor:any,name:any){
     console.log('console',BACKGROUNDcolor);
     console.log(this.noteobject);
 
@@ -62,10 +63,10 @@ return{
     console.log(data);
     this.noteservice.changeColor(data).subscribe((response:any)=>{
       console.log(response);
-      this.displayicon.emit(response)
+      this.displayicon.emit(this.data)
     })
    
-    this.snackbar.open(BACKGROUNDcolor+" color changed",'',{duration: 3000});
+    this.snackbar.open(" color changed to ",name,{duration: 3000});
   }
   Archive() {
     if(this.noteobject.isArchive==false && this.noteobject.isTrash==false){
@@ -118,7 +119,15 @@ return{
   // }
   
       
-  
+  isMouseOver = false;
+
+  onMouseEnter() {
+    this.isMouseOver = true;
+  }
+
+  onMouseLeave() {
+    this.isMouseOver = false;
+  }
     
 getstyle() {
   backgroundColor: this.colors;

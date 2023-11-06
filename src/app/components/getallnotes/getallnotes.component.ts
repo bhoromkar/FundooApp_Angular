@@ -22,6 +22,8 @@ export class GetallnotesComponent implements OnInit {
   @Output() Displaynotes= new EventEmitter<any>;
   singlenote:any;
 
+
+  
   // messageOFPARENT="hello world"
  
   constructor(private noteservice:NotesserviceService) { 
@@ -30,9 +32,8 @@ export class GetallnotesComponent implements OnInit {
  
 
   ngOnInit(): void {
-    
     //this.getAllNotes()
-  //  this.receiveMessagefromdisplaycard(event)
+   this.receiveMessagefromdisplaycard(event);
   }
  
 
@@ -41,16 +42,18 @@ export class GetallnotesComponent implements OnInit {
       console.log("request data", request);
       console.log("request data", request.result);
       this.Array = request.result;
+     
+          console.log("request data", this.notesArray);
       this.notesArray=   this.Array.filter((notedata:any)=>{
-          return (notedata.isArchive === false && notedata.isTrash ===false)      
-
+          return (notedata.isArchive === false && notedata.isTrash ===false && notedata.isPin ===false )      
+          
           })
          
 
 
       
       })
-      console.log("request data", this.notesArray);
+      
       
     }
    
@@ -71,7 +74,8 @@ export class GetallnotesComponent implements OnInit {
 this.getAllNotes();
 this.message=$event;
 console.log(this.message);
+console.log("request data from event", this.notesArray);
 
     }
-  
+    
 }

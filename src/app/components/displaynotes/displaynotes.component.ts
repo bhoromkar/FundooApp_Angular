@@ -1,3 +1,4 @@
+import { DataserviceService } from './../../services/dataservice.service';
 import { FormsModule } from '@angular/forms';
 import { Component, EventEmitter, Input, Output ,OnInit} from '@angular/core';
 import { UserserviceService } from 'src/app/services/userservice/userservice.service';
@@ -23,21 +24,27 @@ export class DisplaynotesComponent implements OnInit {
   @Output() Displaynotes= new EventEmitter<any>;
   resposne: any;
 msg:any;
- 
+message:any;
+searchText:any;
+subscription: any;
 
-   
-   
-    constructor(private noteservice:NotesserviceService,private dialog: MatDialog) { 
+
+
+    constructor(private noteservice:NotesserviceService,private dialog: MatDialog,private data:DataserviceService) { 
       this.token = localStorage.getItem('token');
     }
    
   
     ngOnInit(): void {
-    this.recievefromiconstodisplaycardicon(event)
-    //this.recievefromunarchieve(event)
+   this.recievefromiconstodisplaycardicon(event);
+    this.filter();
+ 
+  
     }
   
-
+    ngOnDestroy(): void {
+     //this.subscription.unsubscribe();
+    }
   toggleHover() {
     this.hover = !this.hover;
   }
@@ -51,15 +58,28 @@ msg:any;
       this.isMouseOver = false;
     }
     
+    filter(){
     
+
+      this.data.searchNote.subscribe((message:any )=> {
+        if (message && message.data && message.data.length > 0) {
+          this.searchText = message.data[0];
+        } else {
+          this.searchText = '';
+        }
+      
+        
+        
+      });
+    }
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponenetComponent, {
       width: '752px',
-      height:'142px',
+      height:'342px',
       
       data:note
       
-      //height:'150px' // Adjust the width as needed
+    
     });
     this.noteID=note.noteId;
     const index = this.notesArray.findIndex((note:any) => note.noteId === this.noteID);
@@ -78,27 +98,14 @@ msg:any;
     });
    
   }
-  // opendialog(note:any) {
-  //   let dialogRef = this.dialog.open(note,);
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.selectedOption = result;
-  //   });
-  // }
+  
   recievefromiconstodisplaycardicon($event: any){
 this.msg=$event;
 this.Displaynotes.emit(this.msg);
   }
 
   
-// recievefromiconstodisplaycardicon($event: any) {
-//   console.log("note archieved", $event);
-//   this.response=$event;
-//   this.noteID=this.response;
-//     const index = this.notesArray.findIndex((note:any) => note.noteId === this.noteID);
-//     if (index !== -1) {
-//       this.notesArray.splice(index, 1); // Removes 1 element at the found index
-//     }
-//   }
+
   recievefromunarchieve($event: any){
     console.log("note unarchieved", $event);
     this.response=$event;
@@ -106,16 +113,9 @@ this.Displaynotes.emit(this.msg);
     this.notesArray.push(this.response);
     alert("notes unarchieve " + this.response)
   }
- 
-  receiveMessagefromupdate($event: any){
-    console.log("updatednotes", $event);
-    this.resposne=$event.result;
-    if(this.resposne!=null){
-  this.notesArray.push(this.resposne);
-  this.notesArray.update(this.resposne);
-  this.notesArray.unshift(this.resposne);
-     console.log(this.resposne);
-    }
+  pinnednote(note:any){
+  note
+  }
     
   }
 
@@ -125,4 +125,3 @@ this.Displaynotes.emit(this.msg);
 
 
 
-}

@@ -38,6 +38,8 @@ import { UpdateComponenetComponent } from './components/update-componenet/update
 import { MatDialogRef } from '@angular/material/dialog';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatMenuTrigger, MatMenuModule} from '@angular/material/menu';
+import { SearchfilterPipe } from './pipes/searchfilter/searchfilter.pipe';
+import { PinComponent } from './components/pin/pin.component';
 
 
 
@@ -58,6 +60,8 @@ import {MatMenuTrigger, MatMenuModule} from '@angular/material/menu';
     ArchieveComponent,
     TrashComponent,
     UpdateComponenetComponent,
+    SearchfilterPipe,
+    PinComponent,
   
    
     

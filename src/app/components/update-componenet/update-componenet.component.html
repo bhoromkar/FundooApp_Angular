@@ -5,7 +5,7 @@
 
       <div  class="title-pin">
         <div  class="title">
-           <p> <input placeholder="Title" [(ngModel)]="noteTitle" value={{noteTitle}} formControlName="noteTitle"></p>
+           <p  > <input  class="notetitleshow" placeholder="Title" [(ngModel)]="noteTitle" value={{noteTitle}} formControlName="noteTitle"></p>
           </div>
           <div  class=pin>
               <svg    xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -18,7 +18,7 @@
         <div>
         <div class="take-note">
             <div >
-             <p>   <input class="note-field" type="text" placeholder="Take a note..." [(ngModel)]="noteDescription" value={{noteDescription}} formControlName="noteDescription"></p>
+             <p class="note-description" ><input class="note-field"  class="custom-textbox" type="text" placeholder="Take a note..." [(ngModel)]="noteDescription" value={{noteDescription}} formControlName="noteDescription">></p>
                 
             
           </div>

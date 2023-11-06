@@ -78,10 +78,10 @@ export class NotesComponent implements OnInit {
      this.noteDescription = '';
 
 
-      // this._snackbar.open('Note Created successfully', '', {
-      //   duration: 3000,
-      //   verticalPosition: 'bottom'
-      // })
+      this._snackbar.open('Note Created successfully', '', {
+        duration: 3000,
+        verticalPosition: 'bottom'
+      })
 
     }
   }

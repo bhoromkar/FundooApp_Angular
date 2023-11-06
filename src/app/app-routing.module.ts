@@ -12,6 +12,7 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { UpdateComponenetComponent } from './components/update-componenet/update-componenet.component';
+import { PinComponent } from './components/pin/pin.component';
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
@@ -28,7 +29,8 @@ children:[
        
         },
        
-      {path:'update', component:UpdateComponenetComponent}
+      {path:'update', component:UpdateComponenetComponent},
+      {path:'pin', component:PinComponent} 
         
 
 

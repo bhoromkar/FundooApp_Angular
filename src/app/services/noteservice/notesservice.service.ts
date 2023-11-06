@@ -5,12 +5,12 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NotesserviceService {
- 
+  private notesArray: any[] = [];
   token: any;
   id: any;
   constructor(private httpservice:HttpserviceService) { }
  
-
+ 
   createnote(reqdata:any){
     
     this.token=localStorage.getItem('token')
