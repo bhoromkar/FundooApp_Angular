@@ -15,10 +15,7 @@
     height:62px;
  background-color: #FFFFFF;
   }
-  // mat-list-item{
-  // //  border: 1px solid pink ; 
 
-  // }
 
   .icon-container{
    // border: 1px solid  limegreen;
@@ -56,6 +53,19 @@ svg  {
 svg  { 
   fill: #202124;
 } 
+.icon-container:focus{
+  background-color: #feefc3;
+}
+.imageicon{
+  border-radius: 50%;
+
+}
+.imageicon:hover{
+  background-color: #ebbf3a;
+}
+input:focus {
+  background-color: yellow;
+}
 
 // .icon-name{
 //   padding-top:5% ;
@@ -110,8 +120,10 @@ padding-top: 5px;
   }
   .hover-sidenav{
    //border: 1px solid yellow ;
-    width:13%;
+    width:17%;
   }
+  
+
   .example-sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
@@ -243,23 +255,25 @@ width:1%;
     
   }
   .right-container{
-   // border:1px solid green;
+    //border:1px solid green;
     display: flex;
    // flex-grow:1;
     flex-direction: row;
-    align-content: right;
-    align-items: right;
-    justify-content: end;
+  // align-content: right;
+   //align-items: right;
+    justify-content:right;
     margin-left: 50px;
     
 
   }
   .inner-conatiner{
-  //  border:1px solid green;
+   // border:1px solid rgb(128, 0, 105);
     display: flex;
    // flex-grow:1;
+   width:150px;
     flex-direction: row;
-    align-content: right;
+    align-content: center;
+justify-content:space-evenly;
   }
   // #full-container div:nth-of-type(1) {flex-grow: 1;}
 .full-container div:nth-of-type(2) {flex-grow:2 ;}

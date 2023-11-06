@@ -5,12 +5,12 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NotesserviceService {
- 
+  private notesArray: any[] = [];
   token: any;
   id: any;
   constructor(private httpservice:HttpserviceService) { }
  
-
+ 
   createnote(reqdata:any){
     
     this.token=localStorage.getItem('token')
@@ -92,6 +92,18 @@ TrashNotes(reqdata:any){
         })
         };
         return this.httpservice.PostService('Note/Trash?noteId='+(reqdata.noteId),reqdata, true, httpOptions);
+
+}
+changeColor(reqdata:any){
+  this.token=localStorage.getItem('token');
+      const httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type':'application/json',
+          Authorization: 'Bearer '  + this.token,//token
+    
+        })
+        };
+        return this.httpservice.PostService('Note/ChangeColor',reqdata, true, httpOptions);
 
 }
 }

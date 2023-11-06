@@ -5,7 +5,8 @@ padding-left:50px;
   display :flex;
   flex-direction: row;
   flex-wrap: wrap;
-
+  align-items: flex-start;
+  
 
  
 
@@ -14,6 +15,7 @@ padding-left:50px;
  padding-bottom: 15px;
  padding-right: 15px;
 
+
 }
 .note-card {
     width: 300px;
@@ -21,7 +23,8 @@ padding-left:50px;
     //margin: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
+   // transition: all 0.2s ease;
+   
 }
     
       
@@ -87,21 +90,21 @@ padding-left:50px;
  .notetitleshow {
   width: 250px;
   white-space: nowrap;
-  overflow: hidden; 
-  text-overflow: ellipsis;
+  overflow:hidden; 
+  text-overflow:inherit;
   min-height:10px ;
   min-width:238px;
   max-width:238px;
   max-height:35px;
   }
   .note-description{
-    white-space: nowrap;
+    white-space:normal;
     overflow: hidden;
     text-overflow: ellipsis;
     min-height:20px ;
   min-width:238px;
   max-width:238px;
-  max-height:48px;
+  max-height:150px;
   }
   // .right-side{
   //   display: flex;
@@ -142,20 +145,28 @@ padding-left:50px;
     flex-direction: row;
     //justify-content: end;
   }
-  .footer{
-  padding-bottom: 5px;
-  padding-top: 5px;
+  // .footer{
+  // //padding-bottom: 5px;
+  // //padding-top: 0px;
 
-  }
+  // }
   /* your-component.component.css */
 .content {
   background-color: lightgray;
-  padding: 20px;
+ // padding: 20px;
   transition: opacity 0.3s; /* Add a transition for smooth opacity changes */
 }
-
-.content:hover {
-  opacity: 1;
+.card:hover .pinit{
+  opacity: 1.0;
+}
+.pinit:not(:hover){
+  opacity: 0.0; 
+}
+.card:hover .ic-hover  {
+  opacity: 1.0;
+}
+.ic-hover:not(:hover){
+  opacity: 0.0; 
 }
 
 .content:not(:hover) {

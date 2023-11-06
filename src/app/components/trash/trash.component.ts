@@ -14,9 +14,9 @@ export class TrashComponent {
   constructor(private noteservice:NotesserviceService){
   this.token=localStorage.getItem('token')}
   ngOnInit(): void {
-    this.getAllNotes();
+    this.getallnotes();
   }
-  getAllNotes(){
+  getallnotes(){
   
     this.noteservice.getallnotes().subscribe((request:any)=> {
       console.log("request data", request);
