@@ -26,7 +26,7 @@ export class TrashComponent {
         if(notedata.isTrash!=false){
           this.trashnotes.push(notedata);
         }
-console.log(this.trashnotes);
+console.log(this.trashnotes ,"all trash notes");
     },(error: any) => {
       console.log("Error", error);
     });

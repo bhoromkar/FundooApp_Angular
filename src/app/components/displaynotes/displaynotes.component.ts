@@ -75,7 +75,7 @@ subscription: any;
   openDialog(note:any): void {
     const dialogRef = this.dialog.open(UpdateComponenetComponent, {
       width: '752px',
-      height:'342px',
+      height:'min-height',
       
       data:note
       

@@ -4,8 +4,9 @@
       <!-- //minheight and max height adjist here -->
  
       <div class="card">
-        <div class="note-card">
-          <mat-card class="note-card" [ngClass]="{'hover-effect': hover}" [ngStyle]="{'background-color': note.color}"
+        
+          <mat-card class="note-card"[ngClass]="{'hover-effect': hover}" 
+          [ngStyle]="{'background-color': note.color}"
             [style.background]="note.color">
             <div (click)="openDialog(note)" class="dialogbox">
               <mat-card-header>
@@ -49,5 +50,3 @@
       </div>
     </div>
   </div>
-
-</div>

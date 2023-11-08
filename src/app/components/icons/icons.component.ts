@@ -25,6 +25,7 @@ export class IconsComponent implements OnInit {
   isReminded: boolean = false;
   isTrashed: boolean = false;
   isArchived: boolean = false;
+  isdeletenote: boolean = false;
    constructor(private noteservice:NotesserviceService,private dataservice:DataserviceService,public dialog: MatDialog,private snackbar:MatSnackBar){}
    colors: Array<any> = [
     { code: '#FEFFFE', name: 'white' },
@@ -43,7 +44,7 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log("notes has archive",this.noteobject);
-   
+ 
   }
    
   setcolors(color:any){
@@ -100,8 +101,9 @@ return{
 });
     }
   }
+
   Trash() {
-    if(this.noteobject.isArchive==false && this.noteobject.isTrash==false){
+    if(this.noteobject.isTrash==false){
         //this.isArchived = !this.isArchived;
         this.data=this.noteobject.noteId;
       console.warn("Note(" ,this.noteobject.noteId);
@@ -136,5 +138,24 @@ getstyle() {
 colorpallate(){
   this.getstyle();
 }
+delete(){
+  if(this.noteobject.isTrash==true){
+    this.isdeletenote!=false;}
+}
 
+deletenote(){
+if(this.noteobject.isTrash!=false){
+  this.isdeletenote==true;
+  this.data=this.noteobject.noteId;
+  let rePayload={
+    noteId:this.data,
+  }
+  this.noteservice.DeleteNotes(rePayload).subscribe((response:any) =>
+  { 
+    console.log('Response Data', response)
+    this.displayicon.emit(response)
+
+});
+}
+}
 }

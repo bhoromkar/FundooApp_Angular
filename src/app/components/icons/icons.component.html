@@ -4,8 +4,7 @@
     
 </div>
 <div class="iconedit">
-  <img src="../../../assets/image/collaborator.svg"    alt=" " >
-   
+  <img src="../../../assets/image/collaborator.svg"    alt="collaborator" id="collaborator"  data-pop="collaborator">
 </div>
 <div  class="iconedit">
   <img src="../../../assets/image/colorpallate.svg"  [matMenuTriggerFor]="menu" #menuTrigger  alt=" " (click)="colorpallate()"  >
@@ -42,21 +41,23 @@
     
   </div>
 </div>
-<div>
-  <!-- <button mat-button [matMenuTriggerFor]="menu" #menuTrigger>Menu</button> -->
+<div   >
+
 <mat-menu #menu="matMenu">
-  <!-- <button mat-menu-item (click)="getstyle()">Choose Color</button> -->
-  <mat-button-toggle-group   name="favoriteColor" aria-label="Favorite Color">
-    <div   class="clor-button" *ngFor="let color of colors">
-    <button mat-mini-fab [ngStyle]="{'background-color': color?.code}" [style.background]="color?.code" (click)="setColor(color.code,color.name)"></button>
-  </div>
-  </mat-button-toggle-group>
-</mat-menu>
-<mat-menu #more="matMenu">
-  <!-- <button mat-menu-item (click)="getstyle()">Choose Color</button> -->
-  <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
-    
-    <mat-button-toggle   (click)="Trash()" >trash</mat-button-toggle>
   
-  </mat-button-toggle-group>
+  <div  class="color-pallate" >
+    <div   class="clor-button"  *ngFor="let color of colors">
+    
+    <button mat-mini-fab [ngStyle]="{'background-color': color?.code}" [style.background]="color?.code" (click)="setColor(color.code,color.name)"></button>
+  
+    </div>
+  </div>
+</mat-menu>
+<mat-menu #more="matMenu" class="more-con">
+ 
+    <div class="moremenu">
+    <mat-button-toggle   (click)="Trash()" >Trash</mat-button-toggle>
+    <mat-button-toggle *ngIf="isdeletenote"  (click)="deletenote()" >Delete</mat-button-toggle>
+  </div>
+
 </mat-menu>
