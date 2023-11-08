@@ -54,12 +54,18 @@ svg  {
   fill: #202124;
 } 
 .icon-container:focus{
-  background-color: #feefc3;
+  background-color: #ebbf3a;
+}
+.icon-container:hover{
+  background-color: #cccccc;
 }
 .imageicon{
   border-radius: 50%;
-
 }
+.icon-point{
+  cursor: pointer;
+}
+
 .imageicon:hover{
   background-color: #ebbf3a;
 }

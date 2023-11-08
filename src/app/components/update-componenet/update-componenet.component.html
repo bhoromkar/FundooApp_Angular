@@ -5,7 +5,14 @@
 
       <div  class="title-pin">
         <div  class="title">
-           <p  > <input  class="notetitleshow" placeholder="Title" [(ngModel)]="noteTitle" value={{noteTitle}} formControlName="noteTitle"></p>
+         
+          <b><div role="textbox" tabindex="0" contenteditable="true" class="notetitleshow" value={noteTitle}  [textContent]="noteTitle" placeholder="Title" [(ngModel)]="noteTitle" formControlName="noteTitle" (input)="updateNoteTitle($event)">
+                
+          </div></b>
+          <!-- <
+           class="notetitleshow" role="textbox"  [textcontent]="noteTitle" placeholder="Title" [(ngModel)]="noteTitle" formControlName="noteTitle">{{noteTitle}}
+          </textarea> -->
+           <!-- <textbox [(ngModel)]="noteTitle"  name="noteTitle"></textbox> -->
           </div>
           <div  class=pin>
               <svg    xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -18,9 +25,11 @@
         <div>
         <div class="take-note">
             <div >
-             <p class="note-description" ><input class="note-field"  class="custom-textbox" type="text" placeholder="Take a note..." [(ngModel)]="noteDescription" value={{noteDescription}} formControlName="noteDescription">></p>
+             <!-- <p class="note-description" ><input class="note-field" role="textbox" class="custom-textbox" type="text" placeholder="Take a note..." [(ngModel)]="noteDescription" value={{noteDescription}} formControlName="noteDescription">></p> -->
                 
-            
+             <b><div role="textbox" tabindex="0" contenteditable="true" class="note-description"   [textContent]="noteDescription" placeholder="Title" [(ngModel)]="noteDescription" formControlName="noteDescription"  (input)=" updateNotedescription($event)">
+                
+             </div></b>
           </div>
             <!-- It will show the deafault create note  -->
            

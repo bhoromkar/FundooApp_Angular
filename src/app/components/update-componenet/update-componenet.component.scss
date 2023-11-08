@@ -18,7 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   }
-  
+ 
   .title {
     display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@
     padding-left: 15px;
     font-size: large;
     width: 598px;
-    height:44px;
+    height:inherit;
     border: none;
     outline: none;
     font: normal 18px Google Sans, Roboto, Helvetica, Arial, sans-serif;
@@ -49,6 +49,7 @@
   padding-top: 10px;
   
   }
+
   
   .take-note {
     display: flex;
@@ -59,6 +60,7 @@
     outline:none;
     border:none;
     background-color: #FAFAFA;
+
   }
   .s-btn {
     border: none;
@@ -69,22 +71,38 @@
     margin-right: 20px;
     margin-top: 10px;
   }
+ 
   
   .note-field {
-    min-height: 27px;
+    display: flex;
+    flex-direction: row;
+
+  //  min-height: 27px;
     padding: 10px 15px;
     background-color: transparent;
     padding-top: 0px;
     padding-right: 300px;
     padding-bottom: 0px;
     padding-left: 15px;
-    height: 2px;
+   // height: 2px;
     width: 420px;
     border: none;
     outline: none;
     font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
   }
-  
+  .note-description{
+    border: none;
+    outline: none;
+    font: normal 16px Google Sans, Roboto, Helvetica, Arial, sans-serif;
+  }
+  .notetitleshow{
+    font-weight: 400;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font:Google Sans, Roboto, Helvetica, Arial, sans-serif;
+    padding-bottom: 10px;
+  }
   .icons {
     display:flex;
     flex-direction: row;
@@ -92,7 +110,7 @@
     opacity: 0.7;
     margin-bottom: -27px;
   }
-  
+
   .icons button {
     border: none;
     background-color: transparent;

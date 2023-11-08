@@ -106,6 +106,19 @@ changeColor(reqdata:any){
         return this.httpservice.PostService('Note/ChangeColor',reqdata, true, httpOptions);
 
 }
+DeleteNotes(reqdata:any){
+  this.token=localStorage.getItem('token');
+  const httpOptions={
+    headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      Authorization: 'Bearer '  + this.token,//token
+
+    })
+    };
+    return this.httpservice.DeleteService('Note/Delete?noteId='+(reqdata.noteId),reqdata, true, httpOptions);
+
+
+}
 }
 
 

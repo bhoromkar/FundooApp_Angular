@@ -16,8 +16,9 @@ export class UpdateComponenetComponent implements OnInit{
   noteDescription:any;
   note:any;
   noteId:any;
+  noteTitle1:any;
   color:any;
-
+  notedescription1:any;
  
   @Output() Displaynotes = new EventEmitter<any>;
 
@@ -37,18 +38,26 @@ export class UpdateComponenetComponent implements OnInit{
       color:this.color,
   });
   }
-  updatenotes(){
   
+  updateNoteTitle(event: any) {
+    this.noteTitle = event.target.textContent;
   }
   
+  updateNotedescription(event: any) {
+    this.noteDescription = event.target.textContent;
+  }
   
   Close(){
     let reqpayload={
-      noteTitle:this.notesForm.get('noteTitle')?.value,
-      noteDescription:this.notesForm.get('noteDescription')?.value,
+      noteTitle:this.noteTitle,
+      
+      
+      noteDescription:this.noteDescription,
     noteId: this.noteId,
-    color:this.color,  
+    color:this.color, 
+    
     }
+    
     this.noteservice.updatenotes(reqpayload).subscribe(( response:any)=>{
      
     console.log(response);

@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {NgIf, NgFor} from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,6 +24,7 @@ message:any;
     mobileQuery: MediaQueryList;
   
     fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
+  //router: any;
   
     
     toggleRemind(){
@@ -31,7 +33,7 @@ message:any;
   
     private _mobileQueryListener: () => void;
   
-    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataserviceService) {
+    constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private data:DataserviceService,private router:Router) {
       this.mobileQuery = media.matchMedia('(max-width: 600px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
       this.mobileQuery.addListener(this._mobileQueryListener);
@@ -56,7 +58,10 @@ message:any;
       console.log(Ddata);
       
       }
- 
+      
+      reLoad(){
+        this.router.navigate(['/dashboard/allnotes'])
+      }
   }
   
   

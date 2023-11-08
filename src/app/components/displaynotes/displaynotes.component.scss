@@ -1,31 +1,43 @@
 .display-container{
 padding-left:50px;
+//position: relative;
 }
 .note{
   display :flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items:flex-start;
+  white-space: pre-wrap;
+  overflow: hidden !important;
+  max-height: 400vh; 
+  max-width: 1300px !important;
   
-
  
 
 }
+  
+
+
 .notelist{
  padding-bottom: 15px;
  padding-right: 15px;
-
-
+ 
 }
 .note-card {
-    width: 300px;
+
+    width: 238px;
+  min-height: 101px;
+
     display: inline-block;
     //margin: 10px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
    // transition: all 0.2s ease;
-   
+ 
+    
 }
+
+
     
       
     @media screen and (max-width: 712px) {
@@ -88,13 +100,13 @@ padding-left:50px;
     height:'142px';
   }
  .notetitleshow {
-  width: 250px;
+  //width: 250px;
   white-space: nowrap;
   overflow:hidden; 
-  text-overflow:inherit;
-  min-height:10px ;
-  min-width:238px;
-  max-width:238px;
+  text-overflow:ellipsis;
+  min-height:13px ;
+  min-width:195px;
+  max-width:195px;
   max-height:35px;
   }
   .note-description{
@@ -102,9 +114,9 @@ padding-left:50px;
     overflow: hidden;
     text-overflow: ellipsis;
     min-height:20px ;
-  min-width:238px;
-  max-width:238px;
-  max-height:150px;
+  min-width:202px;
+  max-width:202px;
+  max-height:550px;
   }
   // .right-side{
   //   display: flex;
